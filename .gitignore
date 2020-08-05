@@ -1,3 +1,4 @@
 /.well-known
 /cgi-bin
 README.md
+/models/Conexao.php

@@ -6,14 +6,20 @@
 -->
 <html>
 	<head>
-		<title>Dani Repetti - Personalized English - Aulas de Inglês Particular em Pinheiros SP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta content="Aulas de Inglês Particular em Pinheiros-SP, Personalizada com ênfase em conversação, Aulas In-Company, Aulas Presenciais ou On-line" name="description" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Aulas de Inglês Particular em Pinheiros-SP, Personalizada com ênfase em conversação, Aulas In-Company, Aulas Presenciais ou On-line">
+        <meta name="keywords" content="Aulas de Inglês, Aulas Particulares, Aulas de Inglês Particulares, Aula Particular, Aulas em Pinheiros-SP, Aulas Personalizadas, Ênfase em Conversação, Aulas In-Company, Aulas Presenciais, Aulas Online, Aulas On-line">
+        <meta name="author" content="Monica Craveiro">
+        <title><?= $_SESSION['title'] ?></title>
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<!--[if lte IE 8]><script src="views/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="views/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="views/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="views/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
 
@@ -503,12 +509,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</section>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="views/js/jquery.min.js"></script>
+			<script src="views/js/jquery.scrolly.min.js"></script>
+			<script src="views/js/skel.min.js"></script>
+			<script src="views/js/util.js"></script>
+			<!--[if lte IE 8]><script src="views/js/ie/respond.min.js"></script><![endif]-->
+			<script src="views/js/main.js"></script>
 
 	</body>
 </html>
