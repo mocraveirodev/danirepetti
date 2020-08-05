@@ -12,7 +12,7 @@
 
         private function viewHome(){
             $_SESSION['title'] = "Dani Repetti - Personalized English - Aulas de Inglês Particular em Pinheiros SP";
-            include "views/home.php";
+            include "assets/home.php";
         }
     }
 ?>
