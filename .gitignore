@@ -2,6 +2,6 @@
 /cgi-bin
 README.md
 /models/Conexao.php
-/vendor
-composer.json
-composer.lock
+/vendor1
+composer1.json
+composer1.lock
