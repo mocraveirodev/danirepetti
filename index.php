@@ -7,5 +7,10 @@
             $controller = new HomeController();
             $controller->acao($rotas);
         break;
+        case "cadastro":
+            include "controllers/UserController.php";
+            $controller = new UserController();
+            $controller->acao($rotas);
+        break;
     }
 ?>

@@ -2809,6 +2809,20 @@
 		text-align: center;
 	}
 
+	#header .login{
+		position: absolute;
+		top: 5%;
+		right: 5%;
+		z-index: 2;
+	}
+
+	#header .login .button{
+		margin-right: 1em;
+		font-size: 0.6em;
+		padding: 0;
+		width: 10em;
+	}
+
 		#header a {
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}

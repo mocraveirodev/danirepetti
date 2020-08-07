@@ -18,6 +18,10 @@
 
 		<!-- Header -->
 			<section id="header">
+				<!-- <div class="login">
+					<a onclick="document.getElementById('modalCadastro').style.display='block'" class="button">Cadastre-se</a>
+					<a href="/?login" class="button">Entre</a>
+				</div> -->
 				<div class="inner">
 
 					<h1><img src="images/danirepetti-aulainglespinheiros.png" title="Dani Repetti - Personalized English - Aulas de Inglês - Pinheiros - SP" alt="Dani Repetti Aulas Inglês Particular Pinheiros" /></h1>
@@ -29,7 +33,54 @@
 						<li><a href="#one" class="button scrolly">Fale bem e vá além</a></li>
 					</ul>
 				</div>
-</section>
+				<!-- <div class="modalCadastro" id="modalCadastro">
+					<span onclick="document.getElementById('modalCadastro').style.display='none'" class="close" title="Close Modal">times;</span>
+					<form action="/?cadastro" method="post" enctype="multipart/form-data" class="modal-content">
+						<div class="container">
+							<h1>Cadastre-se</h1>
+							<p>Realize o pré-cadastro e conheça a Metodologia da Dani Repetti:</p>
+							<hr>
+							
+							<div class="form-name">
+								<div class="field-name">
+									<label for="name"><b>Nome</b></label>
+									<input type="text" placeholder="Informe seu Nome" name="name" required>
+								</div>
+								<div class="field-last">
+									<label for="lastname"><b>Sobrenome</b></label>
+									<input type="text" placeholder="Informe seu Sobrenome" name="lastname" required>
+								</div>
+							</div>
+							
+							<label for="phone"><b>Telefone</b></label>
+							<input type="text" placeholder="Informe seu Telefone com DDD" name="phone" required>
+
+							<label for="company"><b>Empresa</b></label>
+							<input type="text" placeholder="Informe sua Empresa" name="company" required>
+
+							<label for="email"><b>E-mail</b></label>
+							<input type="email" placeholder="Informe seu E-mail" name="email" required>
+
+							<label for="psw"><b>Senha</b></label>
+							<input type="password" placeholder="Enter Password" name="psw" required>
+
+							<label for="psw-repeat"><b>Repeat Password</b></label>
+							<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+							<label>
+							<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+							</label>
+
+							<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+							<div class="clearfix">
+							<button type="button" onclick="document.getElementById('modalCadastro').style.display='none'" class="cancelbtn">Cancelar</button>
+							<button type="submit" class="signupbtn">Cadastre-se</button>
+							</div>
+						</div>
+					</form>
+				</div> -->
+			</section>
 
 		<!-- One -->
 			<section id="one" class="main style1">
