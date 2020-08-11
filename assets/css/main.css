@@ -2823,6 +2823,151 @@
 		width: 10em;
 	}
 
+	#header input[type=text], #header input[type=password], #header input[type=email] {
+		/* width: 100%; */
+		padding: 12px 20px;
+		margin: 0 0.5em;
+		/* margin: 8px 0; */
+		display: block;
+		border: 1px solid #ccc;
+		background: #f1f1f1;
+	}
+
+	#header input[type=text]:focus, #header input[type=password]:focus, #header input[type=email]:focus {
+		background-color: #ddd;
+		outline: none;
+	}
+
+	#header button {
+		background-color: #4CAF50;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		opacity: 0.9;
+	}
+
+	#header button:hover {
+		opacity:1;
+	}
+
+	#header .cancelbtn {
+		padding: 10px 18px;
+		background-color: #f44336;
+	}
+
+	#header span.psw {
+		float: right;
+		padding-top: 16px;
+	}
+
+	#header .cancelbtn, #header .signupbtn {
+		float: left;
+		width: 50%;
+	}
+
+	#header .content {
+		padding: 0 2em;
+	}
+
+	#header .modal {
+		display: none;
+		position: fixed;
+		z-index: 4;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow: auto;
+		background-color: rgb(0,0,0);
+		background-color: rgba(0,0,0,0.7);
+		/* padding-top: 60px; */
+	}
+
+	#header .modal-content {
+		background-color: #4686a0;
+		margin: 5% auto;
+		border: 1px solid #888;
+		width: 50%;
+	}
+
+	#header hr {
+		border: 1px solid #f1f1f1;
+		margin: 1em 0;
+	}
+
+	#header .field{
+		width: -webkit-fill-available;
+	}
+
+	#header .form-name{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#header label{
+		display: unset;
+	}
+
+	#header .imgcontainer{
+		position: relative;
+		margin: 1em 0;
+		/* text-align: center; */
+	}
+
+	#header img.avatar {
+		/* margin-top: 2em; */
+		width: 30%;
+		/* border-radius: 50%; */
+	}
+
+	#header .close {
+		position: absolute;
+		right: 25px;
+		top: 0;
+		font-size: 35px;
+		font-weight: bold;
+		color: #000;
+	}
+
+	#header .close:hover, #header .close:focus {
+		color: #E4183E;
+		cursor: pointer;
+	}
+
+	#header .animate {
+		-webkit-animation: animatezoom 0.6s;
+		animation: animatezoom 0.6s
+	}
+
+	@-webkit-keyframes animatezoom {
+		from {-webkit-transform: scale(0)}
+		to {-webkit-transform: scale(1)}
+	}
+	
+	@keyframes animatezoom {
+		from {transform: scale(0)}
+		to {transform: scale(1)}
+	}
+
+	.clearfix::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	@media screen and (max-width: 300px) {
+		#header span.psw {
+			display: block;
+			float: none;
+		}
+		#header .cancelbtn {
+			width: 100%;
+		}
+	}
+
 		#header a {
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
@@ -2909,6 +3054,9 @@
 
 		#header p {
 			margin: 1em 0 0 0;
+		}
+		#header .content p {
+			margin: 0;
 		}
 
 		#header .actions {
@@ -3433,3 +3581,62 @@
 			}
 
 	}
+
+/* USUÁRIO */
+
+#user{
+	background-color: #4686a0;
+}
+
+#user .form{
+	text-align: center;
+	color: rgba(255, 255, 255, 0.75);
+	padding: 2rem 6rem;
+}
+
+#user .form a{
+	border: none;
+}
+
+#user .logo{
+	width: 25%;
+}
+
+#user h3{
+	color: #fff;
+	margin-top: 0.5em;
+	font-weight: bolder;
+}
+
+#user hr {
+	border: 1px solid #f1f1f1;
+	margin: 1em 0;
+}
+
+#user form{
+	width: 70%;
+	margin: 0 auto;
+}
+
+#user .field-deck{
+	display: flex;
+	justify-items: center;
+}
+
+#user .field{
+	margin: 0.5em;
+	width: -webkit-fill-available;
+}
+
+#user label{
+	margin: 0.5em 0;
+}
+
+#user label b{
+	color: #fff;
+}
+
+#user input[type="text"], #user input[type="password"], #user input[type="email"]{
+	background-color: #fff;
+	color: #333;
+}
