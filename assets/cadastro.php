@@ -21,7 +21,7 @@
                 <div class="field-deck">
                     <div class="field">
                         <label for="phone"><b>Telefone</b></label>
-                        <input type="text" placeholder="+XX (XX) XXXXX-XXXX" name="phone" id="phone" maxlength="19" required>
+                        <input type="text" placeholder="+xx (xx) xxxxx-xxxx" name="phone" id="phone" maxlength="19" required>
                     </div>    
     
                     <div class="field">
@@ -41,6 +41,8 @@
                         <input type="password" placeholder="Informe sua senha" name="psw" required>                    
                     </div>
                 </div>
+                <button type="submit" class="button signupbtn">Cadastrar</button>
+                <a href="/" class="button cancelbtn">Voltar</a>
             </form>
         </section>    
     </main>
