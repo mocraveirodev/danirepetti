@@ -2823,151 +2823,6 @@
 		width: 10em;
 	}
 
-	#header input[type=text], #header input[type=password], #header input[type=email] {
-		/* width: 100%; */
-		padding: 12px 20px;
-		margin: 0 0.5em;
-		/* margin: 8px 0; */
-		display: block;
-		border: 1px solid #ccc;
-		background: #f1f1f1;
-	}
-
-	#header input[type=text]:focus, #header input[type=password]:focus, #header input[type=email]:focus {
-		background-color: #ddd;
-		outline: none;
-	}
-
-	#header button {
-		background-color: #4CAF50;
-		color: white;
-		padding: 14px 20px;
-		margin: 8px 0;
-		border: none;
-		cursor: pointer;
-		width: 100%;
-		opacity: 0.9;
-	}
-
-	#header button:hover {
-		opacity:1;
-	}
-
-	#header .cancelbtn {
-		padding: 10px 18px;
-		background-color: #f44336;
-	}
-
-	#header span.psw {
-		float: right;
-		padding-top: 16px;
-	}
-
-	#header .cancelbtn, #header .signupbtn {
-		float: left;
-		width: 50%;
-	}
-
-	#header .content {
-		padding: 0 2em;
-	}
-
-	#header .modal {
-		display: none;
-		position: fixed;
-		z-index: 4;
-		left: 0;
-		top: 0;
-		width: 100vw;
-		height: 100vh;
-		overflow: auto;
-		background-color: rgb(0,0,0);
-		background-color: rgba(0,0,0,0.7);
-		/* padding-top: 60px; */
-	}
-
-	#header .modal-content {
-		background-color: #4686a0;
-		margin: 5% auto;
-		border: 1px solid #888;
-		width: 50%;
-	}
-
-	#header hr {
-		border: 1px solid #f1f1f1;
-		margin: 1em 0;
-	}
-
-	#header .field{
-		width: -webkit-fill-available;
-	}
-
-	#header .form-name{
-		display: flex;
-		justify-content: space-between;
-	}
-
-	#header label{
-		display: unset;
-	}
-
-	#header .imgcontainer{
-		position: relative;
-		margin: 1em 0;
-		/* text-align: center; */
-	}
-
-	#header img.avatar {
-		/* margin-top: 2em; */
-		width: 30%;
-		/* border-radius: 50%; */
-	}
-
-	#header .close {
-		position: absolute;
-		right: 25px;
-		top: 0;
-		font-size: 35px;
-		font-weight: bold;
-		color: #000;
-	}
-
-	#header .close:hover, #header .close:focus {
-		color: #E4183E;
-		cursor: pointer;
-	}
-
-	#header .animate {
-		-webkit-animation: animatezoom 0.6s;
-		animation: animatezoom 0.6s
-	}
-
-	@-webkit-keyframes animatezoom {
-		from {-webkit-transform: scale(0)}
-		to {-webkit-transform: scale(1)}
-	}
-	
-	@keyframes animatezoom {
-		from {transform: scale(0)}
-		to {transform: scale(1)}
-	}
-
-	.clearfix::after {
-		content: "";
-		clear: both;
-		display: table;
-	}
-
-	@media screen and (max-width: 300px) {
-		#header span.psw {
-			display: block;
-			float: none;
-		}
-		#header .cancelbtn {
-			width: 100%;
-		}
-	}
-
 		#header a {
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
@@ -3586,6 +3441,7 @@
 
 #user{
 	background-color: #4686a0;
+	min-height: 100vh;
 }
 
 #user .form{
@@ -3673,4 +3529,85 @@
 
 #user .form .signupbtn:active {
 	background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+#user .direction{
+	margin: 1em 0;
+}
+
+#user .cadlog{
+	font-weight: 900;
+	text-decoration: underline;
+}
+
+/* MODAL */
+
+#modal .modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+
+#modal .modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+	width: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s
+}
+
+#modal .modal-header {
+	padding: 2px 16px;
+	background-color: #4686a0;
+	color: white;
+	text-align: center;
+}
+
+#modal .close {
+	color: #fff;
+	float: right;
+	font-size: 2em;
+	font-weight: bolder	;
+}
+
+#modal .close:hover,
+#modal .close:focus {
+	color: #E4183E;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#modal .logo-modal{
+	width: 30%;
+}
+
+#modal .modal-body {
+	text-align: center;
+}
+
+#modal .modal-body p {
+	margin: 1em;
+	font-weight: bold;
+}
+
+#modal .modal-footer {
+	height: 2em;
+	background-color: #4686a0;
+	color: white;
+}
+
+@keyframes animatetop {
+	from {top: -300px; opacity: 0}
+	to {top: 0; opacity: 1}
 }

@@ -5,7 +5,7 @@
             <a href="/"><img src="images/danirepetti-aulainglespinheiros.png" alt="Dani Repetti Aulas Inglês Particular Pinheiros" class="logo"></a>
             <h3>Realize o pré-cadastro e conheça a Metodologia da Dani Repetti:</h3>
             <hr>
-            <form action="/?cadastro" method="post" enctype="multipart/form-data">
+            <form action="/?register" method="post" enctype="multipart/form-data">
                 <div class="field-deck">
                     <div class="field">
                         <label for="name"><b>Nome</b></label>
@@ -41,10 +41,16 @@
                         <input type="password" placeholder="Informe sua senha" name="psw" required>                    
                     </div>
                 </div>
+                <input value="student" name="profile" type="hidden" />
                 <button type="submit" class="button signupbtn">Cadastrar</button>
                 <a href="/" class="button cancelbtn">Voltar</a>
+                <p class="direction">Já possui cadastro? <a href="/?login" class="cadlog">CLIQUE AQUI</a> e entre!</p>
             </form>
         </section>    
     </main>
+    <?php include_once "assets/includes/modal.php"; ?>
 
-<?php include_once "assets/includes/bottom.php" ?>
+    <script src="assets/js/modal.js"></script>
+    <script>modalRegister.style.display = 'block';</script>
+
+<?php include_once "assets/includes/bottom.php"; ?>

@@ -3,7 +3,7 @@
 		<!-- Header -->
 			<section id="header">
 				<div class="login">
-					<a href="/?cadastro" class="button">Cadastre-se</a>
+					<a href="/?register" class="button">Cadastre-se</a>
 					<a href="/?login" class="button">Entre</a>
 				</div>
 

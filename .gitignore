@@ -1,7 +1,7 @@
 /.well-known
 /cgi-bin
 README.md
-/models/Conexao.php
+/models/Connection.php
 /vendor
 composer.json
 composer.lock
