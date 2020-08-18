@@ -17,5 +17,10 @@
             $controller = new UserController();
             $controller->acao($rotas);
         break;
+        case "email":
+            include "controllers/UserController.php";
+            $controller = new UserController();
+            $controller->acao($rotas);
+        break;
     }
 ?>

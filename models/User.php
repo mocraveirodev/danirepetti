@@ -3,10 +3,10 @@
     
     class User extends Connection{
         // Classe para cadastro de usuario
-        public function registerUser($name,$lastname,$phone,$company,$profile,$email,$password){
+        public function registerUser($name,$lastname,$phone,$company,$profile,$active,$email,$password){
             $db = parent::createConnection();
-            $query = $db->prepare("INSERT INTO users (name,lastname,phone,company,profile,email,password) VALUES (?,?,?,?,?,?)");
-            return $query->execute([$name,$lastname,$phone,$company,$profile,$email,$password]);
+            $query = $db->prepare("INSERT INTO users (name,lastname,phone,company,profile,active,email,password) VALUES (?,?,?,?,?,?)");
+            return $query->execute([$name,$lastname,$phone,$company,$profile,$active,$email,$password]);
         }
         
         public function recuperaUsuario($email){

@@ -10,6 +10,7 @@
                     <p>Em breve você receberá um email da Dani Repetti.</p>
                 </div>
                 <div class="modal-footer">
+                    <a href="/" class="button modalbtn">Voltar para Página Principal</a>
                 </div>
             </div>
         </div>
