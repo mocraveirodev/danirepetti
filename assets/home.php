@@ -2,10 +2,10 @@
 
 		<!-- Header -->
 			<section id="header">
-				<div class="login">
+				<!-- <div class="login">
 					<a href="/?register" class="button">Cadastre-se</a>
 					<a href="/?login" class="button">Entre</a>
-				</div>
+				</div> -->
 
 				<div class="inner">
 
