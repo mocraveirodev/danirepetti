@@ -1,4 +1,4 @@
-<?php include_once "assets/includes/top.php" ?>
+<?php include_once "assets/includes/top.php"; ?>
 
     <main id="user">
         <section class="form">
@@ -6,7 +6,7 @@
             <h3>Realize o pré-cadastro e conheça a Metodologia da Dani Repetti:</h3>
             <hr>
             <p class="erro"><?php if(isset($_SESSION['error'])) echo $_SESSION['error'] ?></p>
-            <form action="/?register" method="post" enctype="multipart/form-data">
+            <form action="/register" method="post" enctype="multipart/form-data">
                 <div class="field-deck">
                     <div class="field">
                         <label for="name"><b>Nome</b></label>
@@ -44,7 +44,7 @@
                 </div>
                 <button type="submit" class="button signupbtn">Cadastrar</button>
                 <a href="/" class="button cancelbtn">Voltar</a>
-                <p class="direction">Já possui cadastro? <a href="/?login" class="cadlog">CLIQUE AQUI</a> e entre!</p>
+                <p class="direction">Já possui cadastro? <a href="/login" class="cadlog">CLIQUE AQUI</a> e entre!</p>
             </form>
         </section>    
     </main>

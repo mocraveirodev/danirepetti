@@ -40,15 +40,17 @@
 
                 $user = new User();
 
-                // if($user->registerUser($name,$lastname,$phone,$company,$profile,$active,$email,$password)){
-                if(true){
+                if($user->registerUser($name,$lastname,$phone,$company,$profile,$active,$email,$password)){
                     $_SESSION['modal'] = "cadastro";
-                    $email1 = $this->sendMail("Teste1","Teste1","Teste1","Teste1","monica.craveiro@mexconsulting.com.br","oi");
-                    $email2 = $this->sendMail("Teste2","Teste2","Teste2","Teste2","monica.craveiro@mexconsulting.com.br","dani");
-                    echo "<script>window.location.href = '/?register';</script>";
+                    $email1 = $this->sendMail($name,$lastname,$phone,$company,$email,"student");
+                    $email2 = $this->sendMail($name,$lastname,$phone,$company,$email,"dani");
+                    echo "<script>window.location.href = '/register';</script>";
+                    die;
                 }else{
                     $_SESSION['error'] = "Falha no cadastro do aluno, tente novamente!";
-                    echo "<script>window.location.href = '/?register';</script>";
+                    unset($_SESSION['error']);
+                    echo "<script>window.location.href = '/register';</script>";
+                    die;
                 }
             }
             
@@ -68,7 +70,7 @@
 
             if($from != "dani"){
                 $subject = "Pré-cadastro de Aluno - Dani Repetti";
-                $message = "<div style='background-color: #4686a0;height: 100%;width: 100%;color: #fff;'><img src='cid:logo-dani' style='margin: 20px;width: 20%;height: auto;' alt='Logo Dani Repetti'><br><br><h1 style='margin: 0 20px 20px 20px;color: #E4183E;'>Pré-cadastro realizado com sucesso!</h1><hr style='border: 1px solid #f1f1f1; margin:20px;'><h3 style='margin: 20px;'><strong>Em breve entraremos em contato com você por e-mail para dar mais detalhes sobre a Metodologia da Dani Repetti</strong></h3><br><br><p style='margin: 20px;'>Obrigada pelo interesse nas aulas de inglês! Seguem abaixo os dados que recebemos:<br><br><strong>Nome Completo: </strong>$name $lastname<br><strong>Telefone: </strong>$phone<br><strong>Empresa: </strong>$company<br><strong>E-mail: </strong>$email<br></p><br><br><div style='background-color: #fff;width: 100%;height: 3rem;'></div></div>";
+                $message = "<div style='background-color: #4686a0;height: 100%;width: 100%;color: #fff;'><img src='cid:logo-dani' style='margin: 20px;width: 20%;height: auto;' alt='Logo Dani Repetti'><br><br><h1 style='margin: 0 20px 20px 20px;color: #E4183E;'>Pré-cadastro realizado com sucesso!</h1><hr style='border: 1px solid #f1f1f1; margin:20px;'><h3 style='margin: 20px;'><strong>Em breve entraremos em contato com você por e-mail para dar mais detalhes sobre a Metodologia da Dani Repetti</strong></h3><br><br><p style='margin: 20px;'>Obrigada pelo interesse nas aulas de inglês! Seguem abaixo os dados que recebemos:<br><br><strong>Nome Completo: </strong>$name $lastname<br><strong>Telefone: </strong>$phone<br><strong>Empresa: </strong>$company<br><strong>E-mail: </strong><a href='mailto:$email' style='color: #fff; font-weight:bold;'>$email<br></a></p><br><br><div style='background-color: #fff;width: 100%;height: 3rem;'></div></div>";
                 $messagePlain = "Pré-cadastro realizado com sucesso!
                 Em breve entraremos em contato com você por e-mail para dar mais detalhes sobre a Metodologia da Dani Repetti
                 

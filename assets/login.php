@@ -5,7 +5,7 @@
             <a href="/"><img src="images/danirepetti-aulainglespinheiros.png" alt="Dani Repetti Aulas Inglês Particular Pinheiros" class="logo"></a>
             <h3>Entre e aproveite a Metodologia da Dani Repetti:</h3>
             <hr>
-            <form action="/?login" method="post" enctype="multipart/form-data">
+            <form action="/login" method="post" enctype="multipart/form-data">
                 <div class="field-deck">
                     <div class="field">
                         <label for="email"><b>E-mail</b></label>
@@ -19,7 +19,7 @@
                 </div>
                 <button type="submit" class="button signupbtn">Entrar</button>
                 <a href="/" class="button cancelbtn">Voltar</a>
-                <p class="direction">Ainda não tem cadastro? <a href="/?register" class="cadlog">CLIQUE AQUI</a> e cadastre-se!</p>
+                <p class="direction">Ainda não tem cadastro? <a href="/register" class="cadlog">CLIQUE AQUI</a> e cadastre-se!</p>
             </form>
         </section>    
     </main>
