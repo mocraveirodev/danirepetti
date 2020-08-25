@@ -17,12 +17,17 @@
             $controller = new UserController();
             $controller->acao($rotas);
         break;
-        case "email":
+        case "logout":
             include "controllers/UserController.php";
             $controller = new UserController();
             $controller->acao($rotas);
         break;
         case "course":
+            include "controllers/CourseController.php";
+            $controller = new CourseController();
+            $controller->acao($rotas);
+        break;
+        case "notactive":
             include "controllers/CourseController.php";
             $controller = new CourseController();
             $controller->acao($rotas);

@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <button type="submit" class="button signupbtn">Cadastrar</button>
-                <a href="/" class="button cancelbtn">Voltar</a>
+                <a href="/" class="button cancelbtn">Página Inicial</a>
                 <p class="direction">Já possui cadastro? <a href="/login" class="cadlog">CLIQUE AQUI</a> e entre!</p>
             </form>
         </section>    

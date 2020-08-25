@@ -3,6 +3,8 @@
 
     header('Content-Type: text/html; charset=UTF-8');
 
+    date_default_timezone_set('America/Sao_Paulo');
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
@@ -19,23 +21,22 @@
                     $this->registerUser();
                 break;
                 case "login":
-                    $this->viewLogin();
+                    $this->loginUser();
                 break;
-                case "email":
-                    $this->sendMail("Teste1","Teste1","Teste1","Teste1","craveiromonica@gmail.com","dani");
+                case "logout":
+                    $this->logoutUser();
                 break;
             }
         }
 
         private function registerUser(){
             if($_POST){
-                date_default_timezone_set('America/Sao_Paulo');
                 $name = $_POST['name'];
                 $lastname = $_POST['lastname'];
                 $phone = $_POST['phone'];
                 $company = $_POST['company'];
                 $profile = "student";
-                $active = 0;
+                $active = false;
                 $email = $_POST['email'];
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $created_on = date('Y-m-d H:i:s');
@@ -50,7 +51,6 @@
                     die;
                 }else{
                     $_SESSION['error'] = "Falha no cadastro do aluno, tente novamente!";
-                    // unset($_SESSION['error']);
                     echo "<script>window.location.href = '/register';</script>";
                     die;
                 }
@@ -60,22 +60,18 @@
             include "assets/user/register.php";
         }
 
-        private function viewLogin(){
-            if(isset($_SESSION['user'])){
-                echo "<script>window.location.href = '/course';</script>";
-                die;
+        private function loginUser(){
+            if(!is_null($_SESSION['user'])){
+                if($_SESSION['user']->active){
+                    echo "<script>window.location.href = '/course';</script>";
+                    die;
+                }else{
+                    echo "<script>window.location.href = '/notactive';</script>";
+                    die;
+                }
             }
 
             if(isset($_POST['email'])){
-                $this->loginUser();
-            }
-
-            $_SESSION['title'] = "Dani Repetti - Login de Aluno";
-            include "assets/user/login.php";
-        }
-
-        private function loginUser(){
-            if($_POST){
                 $email = $_POST['email'];
                 $password = $_POST['password'];
 
@@ -83,36 +79,39 @@
                     $user = new User();
                     $_SESSION['user'] = $user->retrieveUser($email);
                     unset($_SESSION['user']->password);
-                    $user->lastLogin($_SESSION['user']->id_user);
-                    echo "<script>window.location.href = '/course';</script>";
+                    $login = date('Y-m-d H:i:s');
+                    $user->lastLogin($_SESSION['user']->id_user,$login);
+                    if($_SESSION['user']->active){
+                        echo "<script>window.location.href = '/course';</script>";
+                        die;
+                    }else{
+                        echo "<script>window.location.href = '/notactive';</script>";
+                        die;
+                    }
                 }else{
-                    $_SESSION['errologin'] = "Email e/ou senha incorretos!";
-                    $_SESSION['erroemail'] = "";
-                    $_SESSION['errosenha'] = "";
-                    $_SESSION['alterasenha'] = "";
-                    $_SESSION['abreLogin'] = "";
-                    $_SESSION['emBreve'] = "";
-                    // echo "<script>window.location.href = '/?fuseiotacademy';</script>";
-                    echo "<script>window.location.href = '/?teste';</script>";
+                    $_SESSION['error'] = "Email e/ou senha incorretos!";
+                    echo "<script>window.location.href = '/login';</script>";
+                    die;
                 }
-            }else{
-                $_SESSION['errologin'] = "logar";
-                $_SESSION['erroemail'] = "";
-                $_SESSION['errosenha'] = "";
-                $_SESSION['alterasenha'] = "";
-                $_SESSION['abreLogin'] = "";
-                $_SESSION['emBreve'] = "";
-                // echo "<script>window.location.href = '/?fuseiotacademy';</script>";
-                echo "<script>window.location.href = '/?teste';</script>";
             }
+
+            $_SESSION['title'] = "Dani Repetti - Login de Aluno";
+            include "assets/user/login.php";
         }
 
         private function checkUser($email,$password){
             $db = new User();
 
-            $usuario = $db->retrieveUser($email);
+            $user = $db->retrieveUser($email);
 
-            return password_verify($password,$usuario->senha) ? true : false;
+            return password_verify($password,$user->password) ? true : false;
+        }
+
+        private function logoutUser(){
+            session_gc();
+            session_destroy();
+            unset($_SESSION['user']);
+            echo "<script>window.location.href = '/login';</script>";
         }
 
         private function sendMail($name,$lastname,$phone,$company,$email,$from){
@@ -145,7 +144,7 @@
             }
             
             try {
-                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+                $mail->SMTPDebug = SMTP::DEBUG_OFF;
                 $mail->IsSMTP();
                 $mail->Host = "localhost";
                 $mail->SMTPAuth = false; 

@@ -27,6 +27,15 @@
             return $resultado;
         }
 
+        public function lastLogin($id,$login){
+            $db = parent::createConnection();
+            $query = $db->prepare("INSERT INTO login (id_user, login) VALUES (:id_user,STR_TO_DATE(:login,'%Y-%m-%d %H:%i:%s'))");
+            $query->bindValue(":id_user", $id);
+            $query->bindValue(":login", $login);
+            $resultado = $query->execute();
+            return $resultado;
+        }
+
         public function listarusers(){
             $db = parent::createConnection();
             $query = $db->prepare("SELECT * FROM users");
@@ -70,14 +79,6 @@
             $query = $db->prepare("UPDATE users SET senha = :senha WHERE email = :email");
             $query->bindValue(":email", $email);
             $query->bindValue(":senha", $password);
-            $resultado = $query->execute();
-            return $resultado;
-        }
-
-        public function lastLogin($id){
-            $db = parent::createConnection();
-            $query = $db->prepare("INSERT INTO login (id_usuario, login) VALUES (:id,CURRENT_TIMESTAMP)");
-            $query->bindValue(":id", $id);
             $resultado = $query->execute();
             return $resultado;
         }
