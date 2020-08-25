@@ -22,5 +22,10 @@
             $controller = new UserController();
             $controller->acao($rotas);
         break;
+        case "course":
+            include "controllers/CourseController.php";
+            $controller = new CourseController();
+            $controller->acao($rotas);
+        break;
     }
 ?>

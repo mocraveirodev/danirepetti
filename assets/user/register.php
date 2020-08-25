@@ -52,4 +52,4 @@
 
     <script src="assets/js/modal.js"></script>
 
-<?php include_once "assets/includes/bottom.php"; ?>
+<?php include_once "assets/includes/bottom.php"; unset($_SESSION['error']); ?>

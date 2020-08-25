@@ -3,13 +3,22 @@
     
     class User extends Connection{
         // Classe para cadastro de usuario
-        public function registerUser($name,$lastname,$phone,$company,$profile,$active,$email,$password){
+        public function registerUser($name,$lastname,$phone,$company,$profile,$active,$email,$password,$created_on){
             $db = parent::createConnection();
-            $query = $db->prepare("INSERT INTO users (name,lastname,phone,company,profile,active,email,password) VALUES (?,?,?,?,?,?)");
-            return $query->execute([$name,$lastname,$phone,$company,$profile,$active,$email,$password]);
+            $query = $db->prepare("INSERT INTO users (name,lastname,phone,company,profile,active,email,password,created_on) VALUES (:name,:lastname,:phone,:company,:profile,:active,:email,:password,STR_TO_DATE(:created_on,'%Y-%m-%d %H:%i:%s'))");
+            $query->bindValue(":name", $name);
+            $query->bindValue(":lastname", $lastname);
+            $query->bindValue(":phone", $phone);
+            $query->bindValue(":company", $company);
+            $query->bindValue(":profile", $profile);
+            $query->bindValue(":active", $active);
+            $query->bindValue(":email", $email);
+            $query->bindValue(":password", $password);
+            $query->bindValue(":created_on", $created_on);
+            return $query->execute();
         }
         
-        public function recuperaUsuario($email){
+        public function retrieveUser($email){
             $db = parent::createConnection();
             $query = $db->prepare("SELECT * FROM users WHERE email = :email");
             $query->bindValue(":email", $email);
@@ -65,7 +74,7 @@
             return $resultado;
         }
 
-        public function ultimoLogin($id){
+        public function lastLogin($id){
             $db = parent::createConnection();
             $query = $db->prepare("INSERT INTO login (id_usuario, login) VALUES (:id,CURRENT_TIMESTAMP)");
             $query->bindValue(":id", $id);
