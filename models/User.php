@@ -18,6 +18,7 @@
             return $query->execute();
         }
         
+        //Retorna um usuario a partir do email
         public function retrieveUser($email){
             $db = parent::createConnection();
             $query = $db->prepare("SELECT * FROM users WHERE email = :email");
@@ -27,11 +28,22 @@
             return $resultado;
         }
 
+        //Salva o ultimo login do usuario no BD
         public function lastLogin($id,$login){
             $db = parent::createConnection();
             $query = $db->prepare("INSERT INTO login (id_user, login) VALUES (:id_user,STR_TO_DATE(:login,'%Y-%m-%d %H:%i:%s'))");
             $query->bindValue(":id_user", $id);
             $query->bindValue(":login", $login);
+            $resultado = $query->execute();
+            return $resultado;
+        }
+
+        public function changePassword($email,$password,$updated_on){
+            $db = parent::createConnection();
+            $query = $db->prepare("UPDATE users SET password = :password, updated_on = STR_TO_DATE(:updated_on,'%Y-%m-%d %H:%i:%s') WHERE email = :email");
+            $query->bindValue(":email", $email);
+            $query->bindValue(":password", $password);
+            $query->bindValue(":updated_on", $updated_on);
             $resultado = $query->execute();
             return $resultado;
         }
@@ -70,15 +82,6 @@
             $db = parent::createConnection();
             $query = $db->prepare("DELETE FROM users WHERE id_usuario = :id");
             $query->bindValue(":id", $id);
-            $resultado = $query->execute();
-            return $resultado;
-        }
-
-        public function alteraSenha($email,$password){
-            $db = parent::createConnection();
-            $query = $db->prepare("UPDATE users SET senha = :senha WHERE email = :email");
-            $query->bindValue(":email", $email);
-            $query->bindValue(":senha", $password);
             $resultado = $query->execute();
             return $resultado;
         }

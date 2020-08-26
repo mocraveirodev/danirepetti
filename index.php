@@ -22,6 +22,11 @@
             $controller = new UserController();
             $controller->acao($rotas);
         break;
+        case "changepassword":
+            include "controllers/UserController.php";
+            $controller = new UserController();
+            $controller->acao($rotas);
+        break;
         case "course":
             include "controllers/CourseController.php";
             $controller = new CourseController();

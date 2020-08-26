@@ -1,4 +1,4 @@
-<?php include_once "assets/includes/top.php" ?>
+<?php include_once "assets/includes/top.php"; ?>
 
     <main id="user">
         <section class="form">
@@ -21,6 +21,7 @@
                 <button type="submit" class="button signupbtn">Entrar</button>
                 <a href="/" class="button cancelbtn">Página Inicial</a>
                 <p class="direction">Ainda não tem cadastro? <a href="/register" class="cadlog">CLIQUE AQUI</a> e cadastre-se!</p>
+                <p class="direction">Esqueceu a senha? <a href="/changepassword" class="cadlog">CLIQUE AQUI</a> e altere!</p>
             </form>
         </section>    
     </main>

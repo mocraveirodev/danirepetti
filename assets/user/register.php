@@ -46,9 +46,11 @@
                 <a href="/" class="button cancelbtn">Página Inicial</a>
                 <p class="direction">Já possui cadastro? <a href="/login" class="cadlog">CLIQUE AQUI</a> e entre!</p>
             </form>
-        </section>    
+        </section>
+        
+        <?php include_once "assets/includes/modal.php"; ?>
+
     </main>
-    <?php include_once "assets/includes/modal.php"; ?>
 
     <script src="assets/js/modal.js"></script>
 

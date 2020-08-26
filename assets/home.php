@@ -1,4 +1,4 @@
-<?php include_once "assets/includes/top.php" ?>
+<?php include_once "assets/includes/top.php"; ?>
 
 		<!-- Header -->
 			<section id="header">

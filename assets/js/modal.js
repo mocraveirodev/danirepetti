@@ -1,13 +1,7 @@
-var modalRegister = document.getElementById("modalRegister");
-
-var span = document.getElementsByClassName("close")[0];
-
-span.onclick = function() {
-    modalRegister.style.display = "none";
-}
+var modalInfo = document.getElementById("modalInfo");
 
 window.onclick = function(event) {
-    if (event.target == modalRegister) {
-        modalRegister.style.display = "none";
+    if (event.target == modalInfo) {
+        modalInfo.style.display = "none";
     }
 }

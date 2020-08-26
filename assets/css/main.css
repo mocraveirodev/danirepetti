@@ -3503,6 +3503,11 @@
 	color: #333;
 }
 
+#user .field-change input[type="email"]{
+	width: 50%;
+	margin: 0 auto;
+}
+
 #user .form .button{
 	width: 30%;
 	margin: 2em 0.5em 0;
